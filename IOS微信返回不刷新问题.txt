@@ -1,0 +1,16 @@
+ios返回不刷新：
+
+
+解决办法：$(function() {
+    	pushHistory();
+	});
+	function pushHistory() {
+    	window.addEventListener("popstate", function(e) {
+       	 self.location.reload();
+   	 }, false);
+   	 var state = {
+       	title : "",
+        	url : ""
+   	 };
+    	window.history.replaceState(state, "", "");
+	};

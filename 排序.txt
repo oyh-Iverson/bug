@@ -1,0 +1,12 @@
+
+问题如果数据是这个形式：{z:1，x:2，y:3} 直接sort是拿不出来的
+
+
+解决办法：
+              var dic={x:2,z:1,y:3};//输出   {z:1，x:2，y:3}
+              var sdic=Object.keys(dic).sort(function(a,b){
+                    return dic[a]-dic[b]
+               });
+              for(ki in sdic){                     
+                 console.log(sdic[ki]+":"+dic[sdic[ki]]+",");
+               }

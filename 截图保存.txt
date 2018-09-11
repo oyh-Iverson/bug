@@ -1,0 +1,13 @@
+方法：
+         html2canvas(document.querySelector("#qrcode"),{
+                    useCORS: true,
+                    tainttest:true,
+                }).then(function(canvas) {
+                    canvasImg = canvas.toDataURL("image/png");
+                    var a = document.createElement("a");
+                    a.href=canvasImg;
+                    a.download='你的二维码';
+                    a.click();
+                    // var b = document.body.appendChild(canvas);
+                });
+

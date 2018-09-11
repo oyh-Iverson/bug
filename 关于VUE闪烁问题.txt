@@ -1,0 +1,12 @@
+
+问题：
+
+       使用vue 页面闪烁问题：
+
+
+解决办法：
+             在HTML中使用   v-cloak；
+              在css中写：[v-cloak] {
+                                    display: none;
+
+	                }

@@ -1,0 +1,9 @@
+兼容问题：
+
+在mui的项目中用qrcode.js的的方法复制链接的话      会没有反应失效；
+
+
+
+解决办法：找到mui.css文件中的-webkit-user-select: none;  把它去掉就可以解决了
+
+

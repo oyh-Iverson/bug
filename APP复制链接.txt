@@ -1,0 +1,15 @@
+方法：
+			var foo = mui("#foo")[0].innerHTML;
+						//alert(foo);
+						if(mui.os.android) {
+							var Context = plus.android.importClass("android.content.Context");
+							var main = plus.android.runtimeMainActivity();
+							var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
+							plus.android.invoke(clip, "setText", foo);
+						} else{
+							var UIPasteboard = plus.ios.importClass("UIPasteboard");
+							var generalPasteboard = UIPasteboard.generalPasteboard();
+							generalPasteboard.setValueforPasteboardType(foo, "public.utf8-plain-text");
+							var value = generalPasteboard.valueForPasteboardType("public.utf8-plain-text");
+						}
+						mui.toast("复制成功");	

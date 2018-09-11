@@ -1,0 +1,4 @@
+问题：div中运用了v-if     获取不到这个div的id
+
+
+解决办法：把v-if换成v-show
